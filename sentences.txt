@@ -1,0 +1,30 @@
+s01  It is almost noon.
+s02  The door is open.
+s03  It rained last night.
+s04  My phone is charging.
+s05  The lights are still on.
+s06  She works on the third floor.
+s07  The keys are on the shelf.
+s08  There is milk in the fridge.
+s09  She called earlier this morning.
+s10  The store closes at nine.
+s11  The car is in the garage.
+s12  There is coffee in the kitchen.
+s13  The report is on your desk.
+s14  My brother lives near the park.
+s15  They finished the work yesterday.
+s16  The bus comes at half past six.
+s17  I left the bag on the seat.
+s18  He is wearing a blue jacket.
+s19  The train arrives on platform four.
+s20  She is reading in the other room.
+s21  We walked home from the station.
+s22  The book is on the second shelf.
+s23  He put the letter in the drawer.
+s24  The class starts in ten minutes.
+s25  There are two boxes in the hallway.
+s26  We are having rice for dinner.
+s27  They painted the fence last summer.
+s28  She lives on the other side of town.
+s29  He drives to work along the river road.
+s30  There is a bicycle leaning against the wall.
