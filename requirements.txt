@@ -2,3 +2,5 @@ torch
 torchaudio
 funasr
 modelscope
+numpy
+scikit-learn
