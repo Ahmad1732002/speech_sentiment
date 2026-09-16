@@ -11,6 +11,7 @@ C and the threshold are chosen by cross-validation on the training data alone.
 """
 
 import argparse
+import json
 import re
 from pathlib import Path
 from typing import NamedTuple
@@ -299,9 +300,22 @@ def main():
     if threshold is None:
         threshold = select_threshold(audio_clf, text_clf, split, args.folds)
 
+    # demo.py reloads these, so the settings travel with the classifiers
     args.models_dir.mkdir(exist_ok=True)
     joblib.dump(audio_clf, args.models_dir / "audio_clf.joblib")
     joblib.dump(text_clf, args.models_dir / "text_clf.joblib")
+    (args.models_dir / "fusion.json").write_text(
+        json.dumps(
+            {
+                "audio_c": audio_c,
+                "text_c": text_c,
+                "threshold": float(threshold),
+                "rule": args.rule,
+                "calibrated": args.calibrate,
+            },
+            indent=2,
+        )
+    )
 
     audio = predict(audio_clf, split.X_audio_test)
     text = predict(text_clf, split.X_text_test)

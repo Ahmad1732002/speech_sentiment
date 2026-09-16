@@ -1,0 +1,7 @@
+{
+  "audio_c": 0.001,
+  "text_c": 1.0,
+  "threshold": 0.6100000000000002,
+  "rule": "audio",
+  "calibrated": true
+}
