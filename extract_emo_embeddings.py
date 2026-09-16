@@ -10,8 +10,8 @@ parser = argparse.ArgumentParser(description="Extract emotion2vec embeddings for
 parser.add_argument(
     "--data-dir",
     type=Path,
-    default=ROOT / "data",
-    help="folder containing sad/, happy/, neutral/ subfolders (default: ./data next to this script)",
+    default=ROOT / "data" / "neutral_text",
+    help="folder containing sad/, happy/, neutral/ subfolders (default: data/neutral_text)",
 )
 args = parser.parse_args()
 

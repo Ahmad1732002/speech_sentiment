@@ -1,3 +1,4 @@
+#Emotionally neutral sentences
 s01  It is almost noon.
 s02  The door is open.
 s03  It rained last night.

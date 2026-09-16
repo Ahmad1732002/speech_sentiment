@@ -3,7 +3,7 @@ from pathlib import Path
 from funasr import AutoModel
 
 ROOT = Path(__file__).resolve().parent
-DATA_DIR = ROOT / "data"
+DATA_DIR = ROOT / "data" / "neutral_text"
 
 model = AutoModel(model="iic/emotion2vec_plus_base")
 
@@ -31,7 +31,7 @@ for path, true_label, r in zip(wav_files, true_labels, res):
     pred = label.split("/")[-1]
     hit = pred == true_label
     correct += hit
-    rel_path = Path(path).relative_to(ROOT).as_posix()
+    rel_path = Path(path).relative_to(DATA_DIR).as_posix()
     print(f"{rel_path:<22} {true_label:<10} {pred:<12} {score:<8.3f} {'yes' if hit else 'NO'}")
 
 print(f"\naccuracy: {correct}/{len(wav_files)} = {correct / len(wav_files):.1%}")

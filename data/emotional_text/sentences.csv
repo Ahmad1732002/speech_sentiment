@@ -1,0 +1,76 @@
+id,label,text
+sad_01,sad,I miss my grandmother more every single day.
+sad_02,sad,Nobody came to my birthday party this year.
+sad_03,sad,I failed the exam after studying for weeks.
+sad_04,sad,I read her old messages and felt heartbroken.
+sad_05,sad,I feel so alone in this new city.
+sad_06,sad,She left without even saying goodbye.
+sad_07,sad,I lost my job this morning.
+sad_08,sad,Everything I planned has fallen apart.
+sad_09,sad,I cried myself to sleep again.
+sad_10,sad,My best friend moved far away and stopped calling.
+sad_11,sad,The doctor said there is nothing more they can do.
+sad_12,sad,I wish I could go back and fix my mistakes.
+sad_13,sad,Nobody seems to notice when I am gone.
+sad_14,sad,We had to sell the house I grew up in.
+sad_15,sad,I waited all day but the letter never came.
+sad_16,sad,It hurts to see the empty chair at dinner.
+sad_17,sad,I tried my best and it still was not enough.
+sad_18,sad,My parents are getting divorced.
+sad_19,sad,The flowers she planted died after she left.
+sad_20,sad,I am tired of pretending that I am fine.
+sad_21,sad,He never got to say goodbye to his father.
+sad_22,sad,Our team lost the final by one point.
+sad_23,sad,Our dog passed away last night.
+sad_24,sad,The little shop we loved has closed for good.
+sad_25,sad,I do not think things will ever get better.
+happy_01,happy,I just got accepted into my dream university.
+happy_02,happy,We are finally going on vacation tomorrow.
+happy_03,happy,My sister had a healthy baby girl this morning.
+happy_04,happy,I passed my driving test on the first try.
+happy_05,happy,This is the best day I have had in years.
+happy_06,happy,They surprised me with a party and I loved it.
+happy_07,happy,I got the job I have wanted for so long.
+happy_08,happy,The sun is shining and I feel wonderful.
+happy_09,happy,My best friend is coming to visit next week.
+happy_10,happy,We won the championship last night.
+happy_11,happy,I cannot stop smiling after that phone call.
+happy_12,happy,He said yes when I asked him to marry me.
+happy_13,happy,Our whole family was together for the holidays.
+happy_14,happy,I finally finished my first marathon.
+happy_15,happy,The kids laughed all afternoon at the beach.
+happy_16,happy,My painting won first prize at the fair.
+happy_17,happy,I am so proud of how far I have come.
+happy_18,happy,We adopted a puppy and he is adorable.
+happy_19,happy,Dinner with old friends made my whole week.
+happy_20,happy,I got a raise and a promotion today.
+happy_21,happy,The concert was even better than I hoped.
+happy_22,happy,My grandparents are celebrating fifty years together.
+happy_23,happy,I feel lucky to have such kind people around me.
+happy_24,happy,Our garden is full of flowers this spring.
+happy_25,happy,Everything worked out perfectly in the end.
+neutral_01,neutral,The meeting has been moved to Thursday.
+neutral_02,neutral,The library opens at eight in the morning.
+neutral_03,neutral,Please print two copies of the form.
+neutral_04,neutral,The package should arrive by Friday.
+neutral_05,neutral,He parked the car across the street.
+neutral_06,neutral,The recipe calls for two cups of flour.
+neutral_07,neutral,The museum is closed on Mondays.
+neutral_08,neutral,I need to renew my passport next month.
+neutral_09,neutral,The printer is on the second floor.
+neutral_10,neutral,She ordered a sandwich and a glass of water.
+neutral_11,neutral,The next train leaves in twenty minutes.
+neutral_12,neutral,The report has twelve pages.
+neutral_13,neutral,We moved the table closer to the window.
+neutral_14,neutral,The laptop needs to be updated tonight.
+neutral_15,neutral,He usually takes the stairs to his office.
+neutral_16,neutral,The shop sells both fruit and vegetables.
+neutral_17,neutral,The form asks for your address and phone number.
+neutral_18,neutral,The lecture covers chapters three and four.
+neutral_19,neutral,They changed the lock on the front door.
+neutral_20,neutral,The water bill is due at the end of the month.
+neutral_21,neutral,She keeps her notes in a green folder.
+neutral_22,neutral,The road to the airport is being repaired.
+neutral_23,neutral,I will send the file after lunch.
+neutral_24,neutral,The chairs are stacked in the corner of the room.
+neutral_25,neutral,The weather forecast says it will be cloudy.

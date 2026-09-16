@@ -4,3 +4,5 @@ funasr
 modelscope
 numpy
 scikit-learn
+transformers
+librosa
