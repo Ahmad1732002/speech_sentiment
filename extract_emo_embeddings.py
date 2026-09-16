@@ -4,7 +4,6 @@ from funasr import AutoModel
 import numpy as np
 
 ROOT = Path(__file__).resolve().parent
-EMBEDDINGS_DIR = ROOT / "embeddings"
 
 parser = argparse.ArgumentParser(description="Extract emotion2vec embeddings for the audio dataset.")
 parser.add_argument(
@@ -13,40 +12,39 @@ parser.add_argument(
     default=ROOT / "data" / "neutral_text",
     help="folder containing sad/, happy/, neutral/ subfolders (default: data/neutral_text)",
 )
+parser.add_argument(
+    "--out-dir",
+    type=Path,
+    help="where to save X.npy/y.npy/groups.npy (default: embeddings/audio/<data dir name>)",
+)
 args = parser.parse_args()
+out_dir = args.out_dir or ROOT / "embeddings" / "audio" / args.data_dir.name
 
 model = AutoModel(model="iic/emotion2vec_plus_base")
 
 def load_data(data_dir):
     emotions = ["sad", "happy", "neutral"]
-    samples = []
-    for i in range(1, 26):
-        if i < 10:
-            samples.append(f"s0{i}")
-        else:
-            samples.append(f"s{i}")
-
-    wav_files = []
+    audio_files = []
     true_labels = []
     for emotion in emotions:
-        for sample in samples:
-            wav_files.append(str(Path(data_dir) / emotion / f"{sample}.wav"))
-            true_labels.append(emotion)
+        files = sorted((Path(data_dir) / emotion).glob("*.wav"))
+        audio_files.extend(files)
+        true_labels.extend([emotion] * len(files))
 
-    return wav_files, true_labels
+    return audio_files, true_labels
 
 
-wav_files, true_labels = load_data(args.data_dir)
-res = model.generate(wav_files, granularity="utterance", extract_embedding=True)
+audio_files, true_labels = load_data(args.data_dir)
+res = model.generate([str(p) for p in audio_files], granularity="utterance", extract_embedding=True)
 embeddings = [r["feats"] for r in res]
 X = np.stack(embeddings)
 y = np.array(true_labels)
-# sentence id (s01, s02, ...) used to group the train/test split
-groups = np.array([Path(p).stem for p in wav_files])
+# sentence id (s01, sad_21, ...) used to group the train/test split and to pair with text
+groups = np.array([p.stem for p in audio_files])
 print(X.shape, y.shape, groups.shape)
 
-EMBEDDINGS_DIR.mkdir(exist_ok=True)
-np.save(EMBEDDINGS_DIR / "X.npy", X)
-np.save(EMBEDDINGS_DIR / "y.npy", y)
-np.save(EMBEDDINGS_DIR / "groups.npy", groups)
-print("saved embeddings to", EMBEDDINGS_DIR)
+out_dir.mkdir(parents=True, exist_ok=True)
+np.save(out_dir / "X.npy", X)
+np.save(out_dir / "y.npy", y)
+np.save(out_dir / "groups.npy", groups)
+print("saved embeddings to", out_dir)

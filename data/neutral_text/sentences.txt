@@ -24,8 +24,3 @@ s22  The book is on the second shelf.
 s23  He put the letter in the drawer.
 s24  The class starts in ten minutes.
 s25  There are two boxes in the hallway.
-s26  We are having rice for dinner.
-s27  They painted the fence last summer.
-s28  She lives on the other side of town.
-s29  He drives to work along the river road.
-s30  There is a bicycle leaning against the wall.

@@ -1,3 +1,4 @@
+import argparse
 from pathlib import Path
 import numpy as np
 from sklearn.model_selection import GroupShuffleSplit
@@ -9,12 +10,20 @@ from sklearn.metrics import accuracy_score, classification_report, confusion_mat
 
 
 ROOT = Path(__file__).resolve().parent
-EMBEDDINGS_DIR = ROOT / "audio_embeddings"
 
-# run extract_embeddings.py first to create these files
-X = np.load(EMBEDDINGS_DIR / "X.npy")
-y = np.load(EMBEDDINGS_DIR / "y.npy")
-groups = np.load(EMBEDDINGS_DIR / "groups.npy")
+parser = argparse.ArgumentParser(description="Train emotion classifiers on saved embeddings.")
+parser.add_argument(
+    "--embeddings-dir",
+    type=Path,
+    default=ROOT / "embeddings" / "audio" / "neutral_text",
+    help="folder with X.npy/y.npy/groups.npy (default: embeddings/audio/neutral_text)",
+)
+args = parser.parse_args()
+
+# run extract_emo_embeddings.py or extract_text_embedding.py first to create these files
+X = np.load(args.embeddings_dir / "X.npy")
+y = np.load(args.embeddings_dir / "y.npy")
+groups = np.load(args.embeddings_dir / "groups.npy")
 
 # group by sentence id so a sentence is never in both train and test
 splitter = GroupShuffleSplit(n_splits=1, test_size=0.2, random_state=42)
