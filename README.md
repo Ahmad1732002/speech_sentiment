@@ -3,7 +3,7 @@
 Classifies a recording as **sad**, **happy** or **neutral** using two independent views
 of the same utterance, combined by a confidence gate:
 
-![Pipeline](audio_sentiment_pipeline.png)
+<img src="audio_sentiment_pipeline.png" alt="Pipeline" width="600">
 
 The audio classifier answers whenever its top probability clears a threshold; otherwise
 the text classifier answers.
