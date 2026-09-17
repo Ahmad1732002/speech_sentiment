@@ -3,11 +3,7 @@
 Classifies a recording as **sad**, **happy** or **neutral** using two independent views
 of the same utterance, combined by a confidence gate:
 
-```
-                +- emotion2vec -> audio embedding -> audio classifier -+
-wav -> resample +                                                      +-> gate -> emotion
-                +- Whisper -> transcription -> BERT -> text classifier -+
-```
+![Pipeline](audio_sentiment_pipeline.pdf)
 
 The audio classifier answers whenever its top probability clears a threshold; otherwise
 the text classifier answers.
